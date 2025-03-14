@@ -19,7 +19,10 @@ public:
 	virtual void deposit(double amount) = 0;
 	virtual void withdraw(double amount) = 0;
 	virtual double getBalance() const = 0;
-  virtual void setBalance(double b) = 0;
+	virtual void setBalance(double b) = 0;
+	virtual long getAccountNumber() const = 0;
+	virtual void setAccountNumber(long num) const = 0;
+
 };
 
 #endif
