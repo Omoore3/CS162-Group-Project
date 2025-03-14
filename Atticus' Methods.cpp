@@ -1,4 +1,5 @@
 #include "Transaction.h"
+#include "Account.h"
 
 Transaction::Transaction() : amount(0), date(time(0)) {}
 
