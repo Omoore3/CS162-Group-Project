@@ -1,6 +1,6 @@
-// Cd.h
-#ifndef CD_H
-#define CD_H
+// CDAccount.h
+#ifndef CDACCOUNT_H
+#define CDACCOUNT_H
 
 #include <iostream>
 #include <vector>
@@ -45,8 +45,8 @@ public:
     void printAccount() const override;
 };
 
-// AccountSystem Class to manage customers and accounts
-class AccountSystem {
+// CDAccountSystem Class to manage CD accounts
+class CDAccountSystem {
 private:
     vector<CDAccount> cdAccounts;
 
@@ -56,4 +56,4 @@ public:
     void transferBetweenAccounts(int fromAccountId, int toAccountId, double amount);
 };
 
-#endif // CD_H
+#endif // CDACCOUNT_H
