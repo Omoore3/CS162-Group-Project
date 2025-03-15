@@ -28,7 +28,7 @@ protected:
 	int getNumOfTransactions() const;
 	int setNumOfTransactions() const;
 	Account();
-	Account(long account_number, double balance);
+	Account(long a, double b);
 
 };
 
