@@ -19,7 +19,7 @@ protected:
 	virtual void transfer(Account *other) = 0;
 	virtual void deposit(double amount) = 0;
 	virtual void withdraw(double amount) = 0;
-	Transaction getTransaction() const;
+	Transaction getTransaction(int i) const;
 	void setTransaction(int i);
 	double getBalance() const;
 	void setBalance(double b);
