@@ -19,8 +19,8 @@ protected:
 	virtual void transfer(Account *other) = 0;
 	virtual void deposit(double amount) = 0;
 	virtual void withdraw(double amount) = 0;
-	virtual double getBalance() const = 0;
-	virtual void setBalance(double b) = 0;
+	double getBalance() const;
+	void setBalance(double b);
 	long getAccountNumber() const;
 	void setAccountNumber(long num);
 	int getNumOfTransactions() const;
