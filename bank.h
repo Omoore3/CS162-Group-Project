@@ -15,4 +15,5 @@ public:
 	void addCustomer(string name, int dob, int phone, string email, string pass);
 	int findCustomerIndex(Person customer);
 	void removeCustomer(int index);
+	Person getCustomer(int index);
 };

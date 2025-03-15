@@ -27,6 +27,10 @@ int Bank::findCustomerIndex(Person customer) {//Searches for a customer by their
 	}
 }
 
+Person Bank::getCustomer(int index) {
+	return customers[index];
+}
+
 void Bank::removeCustomer(int index) {
 	customers[index] = Person();
 }
