@@ -20,7 +20,7 @@ protected:
 	virtual void deposit(double amount) = 0;
 	virtual void withdraw(double amount) = 0;
 	Transaction getTransaction(int i) const;
-	void setTransaction(int i);
+	void setTransaction(int i, Transaction T);
 	double getBalance() const;
 	void setBalance(double b);
 	long getAccountNumber() const;
