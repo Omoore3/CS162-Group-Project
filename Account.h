@@ -27,6 +27,9 @@ protected:
 	void setAccountNumber(long num);
 	int getNumOfTransactions() const;
 	int setNumOfTransactions() const;
+	Account();
+	Account(long account_number, double balance);
+
 };
 
 #endif
