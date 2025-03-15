@@ -14,15 +14,17 @@ private:
 	long account_number;
 	double balance;
 	std::vector<Transaction> transactions;
-public:
+	int numOfTransactions;
+protected:
 	virtual void transfer(Account *other) = 0;
 	virtual void deposit(double amount) = 0;
 	virtual void withdraw(double amount) = 0;
 	virtual double getBalance() const = 0;
 	virtual void setBalance(double b) = 0;
-	virtual long getAccountNumber() const = 0;
-	virtual void setAccountNumber(long num) const = 0;
-
+	long getAccountNumber() const;
+	void setAccountNumber(long num);
+	int getNumOfTransactions() const;
+	int setNumOfTransactions() const;
 };
 
 #endif
