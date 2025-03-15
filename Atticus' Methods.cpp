@@ -30,7 +30,7 @@ Transaction Account::getTransaction(int i) {
 	return transactions[i];
 }
 
-void Account:setTransaction(int i, Transaction T) {
+void Account::setTransaction(int i, Transaction T) {
 	if(i >= transactions.size() || i < 0) throw string("Out of bounds error. Aborting process...");
 	transactions[i] = T;
 }
