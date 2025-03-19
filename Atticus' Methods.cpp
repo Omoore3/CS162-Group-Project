@@ -26,12 +26,12 @@ time_t Transaction::getTime() const {
 //Possible boounds exception. Function must be passed from inside a
 //try block with the appropriate catch block
 Transaction Account::getTransaction(int i) {
-	if(i >= transactions.size() || i < 0) throw string("Out of bounds error. Aborting process...");
+	if(i >= transactions.size() || i < 0) throw runtime_error("Out of bounds error. Aborting process...");
 	return transactions[i];
 }
 
 void Account::setTransaction(int i, Transaction T) {
-	if(i >= transactions.size() || i < 0) throw string("Out of bounds error. Aborting process...");
+	if(i >= transactions.size() || i < 0) throw runtime_error("Out of bounds error. Aborting process...");
 	transactions[i] = T;
 }
 
