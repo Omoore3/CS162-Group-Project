@@ -1,4 +1,4 @@
-// SavingsAccount.h
+// Savings.h
 
 #ifndef SAVINGS_H
 #define SAVINGS_H
@@ -16,4 +16,4 @@ public:
 
 };
 
-#endif // SAVINGSACCOUNT_H
+#endif
