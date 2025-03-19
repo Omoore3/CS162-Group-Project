@@ -1,6 +1,7 @@
 // SavingsAccount.cpp
 
 #include "Savings.h"
+#include <stdexcept>  // To handle errors
 
 // Method to withdraw money from the account
 // Withdrawing from a savings account incurs a $50 fee
@@ -26,8 +27,7 @@ void Savings::printAccount() const {
 }
 
 // Constructor for SavingsAccount class (inherits from Account)
-SavingsAccount::SavingsAccount(int id, double initialDeposit)
-    : Account(id, initialDeposit) {}
+Savings::Savings(long account_number, double balaance) : Account(account_number, balance) {}
 
 // Overridden withdraw method for SavingsAccount
 void Savings::withdraw(double amount) {
