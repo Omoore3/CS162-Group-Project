@@ -1,3 +1,8 @@
+//Author: Atticus Crook
+//Purpose: Header file for the transaction class.
+//Date Modified: 3/19/24
+//Compiler Used: MS VC++ 2022
+
 #ifndef TRANSACTION_H
 #define TRANSACTION_H
 #include <ctime>
