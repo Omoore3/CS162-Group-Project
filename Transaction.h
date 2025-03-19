@@ -24,8 +24,8 @@ public:
 	//not exist to prevent potential fraud (i.e. rerouting transactions to other accounts.
 	//changing transaction amounts, etc.).
 	
-	Transaction(double a);
-	Transaction(double a, time_t d, long num);
+	Transaction(double amount);
+	Transaction(double amount, long otherAccountNumber);
 	Transaction();
 };
 
