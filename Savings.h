@@ -12,10 +12,12 @@ using namespace std;
 // Savings Account class derived from Account class
 class Savings : public Account {
 public:
-    SavingsAccount(int id, double initialDeposit); // Constructor to create a savings account
+    Savings(int id, double initialDeposit); // Constructor to create a savings account
 
-    void withdraw(double amount) override; // Override withdraw method
-    void printAccount() const override;   // Override to print savings account details
+    void withdraw(double amount) override final; // Override withdraw method
+    void transfer(Account* other) override final; // Override transfer method
+    void deposit(double amount) override final; // Override deposit method
+
 };
 
 #endif // SAVINGSACCOUNT_H
