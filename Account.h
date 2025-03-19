@@ -18,9 +18,9 @@ private:
 
 	//setters which should be inaccessible to prevent fraud, but are required for the rubric
 	void setTransaction(int i, Transaction T);
-	void setBalance(double b);
-	void setAccountNumber(long num);
-	int setNumOfTransactions() const;
+	void setBalance(double balance);
+	void setAccountNumber(long account_number);
+	void setNumOfTransactions();
 protected:
 	//some of the virtual functions to be inherited by subclasses
 	virtual void transfer(Account* other, double amount) = 0;
