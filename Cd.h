@@ -1,4 +1,4 @@
-// CDAccount.h
+// Cd.h
 #ifndef CD_H
 #define CD_H
 
@@ -42,4 +42,4 @@ public:
     void transferBetweenAccounts(int fromAccountId, int toAccountId, double amount);
 };
 
-#endif // CDACCOUNT_H
+#endif
