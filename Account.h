@@ -21,6 +21,7 @@ protected:
 	virtual void deposit(double amount) = 0;
 	virtual void withdraw(double amount) = 0;
 	//getters and setters
+	//NOTE: Ideally, these setters should probably not exist to prevent fraud
 	Transaction getTransaction(int i) const;
 	void setTransaction(int i, Transaction T);
 	double getBalance() const;
