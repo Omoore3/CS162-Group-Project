@@ -22,12 +22,12 @@ private:
     double calculateInterestRate() const;
 
 public:
-    CDAccount(int id, double initialDeposit, int termMonths);
+    Cd(long account_number, double balance, int termMonths);
     bool isMaturityDatePassed() const;
     double calculateInterest();
-    void deposit(double amount) = delete;  // Disable deposit function for this class
-    void withdraw(double amount);
-    void transfer(CDAccount& toAccount, double amount);
+    void deposit(double amount) override final;  // Disable deposit function for this class
+    void withdraw(double amount) override final;
+    void transfer(CDAccount& toAccount, double amount) override final;
     void printAccount() const override;
 };
 
