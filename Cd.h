@@ -31,15 +31,4 @@ public:
     void printAccount() const override;
 };
 
-// CDAccountSystem Class to manage CD accounts
-class CDAccountSystem {
-private:
-    vector<CDAccount> cdAccounts;
-
-public:
-    void addCDAccount(CDAccount account);
-    void printCDAccounts() const;
-    void transferBetweenAccounts(int fromAccountId, int toAccountId, double amount);
-};
-
 #endif
