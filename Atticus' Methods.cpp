@@ -68,17 +68,54 @@ void Transaction::setOtherAccountNumber(long newOtherAccountNumber) {
 
 
 Account::Account(): account_number(0), balance(0), numOfTransactions(0) {} // default constructor
-Account::Account(long a, double b): account_number(a), balance(b), numOfTransactions(0) {} //constructor for account_number and balance
+
+//constructor for account_number and balance
+Account::Account(long account_number, double balance) {
+	this->account_number = account_number;
+	this->balance = balance;
+	this->numOfTransactions = 0;
+}
+
+//getters for Account class (not virtual functions, those are defined in subclasses)
 
 //Possible boounds exception. Function must be passed from inside a
 //try block with the appropriate catch block
-Transaction Account::getTransaction(int i) {
+Transaction Account::getTransaction(int i) const {
 	if(i >= transactions.size() || i < 0) 
 		throw runtime_error("Out of bounds error. Aborting process...");
 	return transactions[i];
 }
+
+double Account::getBalance() const {
+	return this->balance;
+}
+
+long Account::getAccountNumber() const {
+	return this->account_number;
+}
+
+int Account::getNumOfTransactions() const {
+	return this->numOfTransactions;
+}
+
+//setters for Account class
+
+void Account::setBalance(double balance) const {
+	this->balance = balance;
+}
+
+void Account::setAccountNumber(long account_number) const {
+	this->account_number = account_number;
+}
+
+void Account::getNumOfTransactions() const {
+	this->numOfTransactions = this->transactions.size();
+}
+
 void Account::setTransaction(int i, Transaction T) {
 	if(i >= transactions.size() || i < 0) 
 		throw runtime_error("Out of bounds error. Aborting process...");
 	transactions[i] = T;
 }
+
+
