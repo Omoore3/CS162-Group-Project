@@ -27,7 +27,7 @@ protected:
 	virtual void deposit(double amount) = 0;
 	virtual void withdraw(double amount) = 0;
 	//getters
-	std::Transaction getTransaction(int i) const;
+	Transaction getTransaction(int i) const;
 	double getBalance() const;
 	long getAccountNumber() const;
 	int getNumOfTransactions() const;
