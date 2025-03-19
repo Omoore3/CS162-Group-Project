@@ -3,7 +3,6 @@
 #indef CHECKINGACCOUNT_H
 #define CHECKINGACCOUNT_H
 #include <iostream>
-using namespace std; 
 
 class CheckingAccount {
 private: 
