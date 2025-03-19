@@ -10,10 +10,11 @@
 //Transaction class' methods, getters, setters and constructors
 //*********************************************************
 
-Transaction::Transaction() : amount(0), date(time(0)) {} //default constructor
-Transaction::Transaction(double a) : amount(a), date(time(0)) {} //given an amount by default creates a transaction at the time
-								 //the object is instantiated
-Transaction::Transaction(double a, time_t d) : amount(a), date(d) {} //creates a transaction of the amount and time specified
+Transaction::Transaction() : amount(0), date(time(0)), otherAccountNumber(0) {} //default constructor. Should NOT be used in code
+Transaction::Transaction(double a) : amount(a), date(time(0)), otherAccountNumber((a < 0) ? -1: 1) {} //given an amount by default creates a 
+								 //transaction at the time the object is instantiated. If amount is negative,
+								 //transaction represents a withdrawal, if positve represents a deposit
+Transaction::Transaction(double a, time_t d, long num) : amount(a), date(d), otherAccountNumber(num)  {} //creates a transaction of the amount and time specified
 
 double Transaction::getAmount() const {
 	return this->amount;
