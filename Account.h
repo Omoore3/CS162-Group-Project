@@ -17,7 +17,7 @@ private:
 	int numOfTransactions;
 protected:
 	//some of the virtual functions to be inherited by subclasses
-	virtual void transfer(Account& other, double amount) = 0;
+	virtual void transfer(Account* other, double amount) = 0;
 	virtual void deposit(double amount) = 0;
 	virtual void withdraw(double amount) = 0;
 	//getters and setters
