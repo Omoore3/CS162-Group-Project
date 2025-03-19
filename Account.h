@@ -15,21 +15,22 @@ private:
 	double balance;	     //to verrify that account_number is unique in all classes (Use a map?)
 	std::vector<Transaction> transactions;
 	int numOfTransactions;
+
+	//setters which should be inaccessible to prevent fraud, but are required for the rubric
+	void setTransaction(int i, Transaction T);
+	void setBalance(double b);
+	void setAccountNumber(long num);
+	int setNumOfTransactions() const;
 protected:
 	//some of the virtual functions to be inherited by subclasses
 	virtual void transfer(Account* other, double amount) = 0;
 	virtual void deposit(double amount) = 0;
 	virtual void withdraw(double amount) = 0;
-	//getters and setters
-	//NOTE: Ideally, these setters should probably not exist to prevent fraud
+	//getters
 	Transaction getTransaction(int i) const;
-	void setTransaction(int i, Transaction T);
 	double getBalance() const;
-	void setBalance(double b);
 	long getAccountNumber() const;
-	void setAccountNumber(long num);
 	int getNumOfTransactions() const;
-	int setNumOfTransactions() const;
 	//Constructors
 	Account();
 	Account(long a, double b);
