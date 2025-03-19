@@ -10,9 +10,9 @@ private:
 		     //source of 1 represents an external deposit. source of -1 represent a withdrawal
 
 	//Setters which are inaccessible after initial action made. Required by rubric, but inacessible to prevent fraud
-	void setAmount(double a);
+	void setAmount(double newAmount);
 	void setTime(time_t newDate);
-	void setOtherAccountNumber(long newAccout);
+	void setOtherAccountNumber(long newOtherAccountNumber);
 public:
 	//getter methods
 	double getAmount() const;
