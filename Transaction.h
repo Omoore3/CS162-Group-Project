@@ -25,7 +25,7 @@ public:
 	//changing transaction amounts, etc.).
 	
 	Transaction(double a);
-	Transaction(double a, time_t d);
+	Transaction(double a, time_t d, long num);
 	Transaction();
 };
 
