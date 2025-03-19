@@ -5,8 +5,6 @@
 
 #include "Account.h"  //base class
 
-using namespace std;
-
 // Savings Account class derived from Account class
 class Savings : public Account {
 public:
