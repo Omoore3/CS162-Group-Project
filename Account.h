@@ -12,8 +12,8 @@
 
 class Account {
 private:
-	long account_number;
-	double balance;
+	long account_number; //unique identifier for each account class. Need a method
+	double balance;	     //to verrify that account_number is unique in all classes (Use a map?)
 	std::vector<Transaction> transactions;
 	int numOfTransactions;
 protected:
