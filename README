@@ -1,8 +1,3 @@
 This is the read me file for the CS 162 group project!
-MAke an edit
-
-fdshafkodsahfdlvnjrieanvjiaenvrjheisvjrqe
-
-c++ coding gjrjggui3r3g
-
-This is the new change I'm making at 5:54PM
+Our project creates a bank class with an STL vector defining all of our customers. Each customer as an array of accounts which they can create.
+Accounts have various functions, and at the end of the programs runtime, all the data of the bank is serialized in a file.
