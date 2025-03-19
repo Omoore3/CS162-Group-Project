@@ -3,6 +3,7 @@
 #include "Savings.h"
 
 // Method to withdraw money from the account
+// Withdrawing from a savings account incurs a $50 fee
 void Savings::withdraw(double amount) {
     if (balance < amount - 50) {
         throw runtime_error("Not enough money to withdraw!"); // Handle error if balance is too low
