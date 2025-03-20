@@ -1,7 +1,7 @@
 //CheckingAccount.h
 
-#indef CHECKINGACCOUNT_H
-#define CHECKINGACCOUNT_H
+#indef CHECKINGS_H
+#define CHECKINGS_H
 #include <iostream>
 using namespace std; 
 
@@ -29,5 +29,5 @@ public:
       void printAccountInfo() const;
 };
 
-     #endif // CHECKINGACCOUNT_H
+     #endif // CHECKINGS_H
 
