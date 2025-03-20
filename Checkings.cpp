@@ -1,6 +1,6 @@
 // CheckingAccount.cpp
 
-#include "CheckingAccount.h"
+#include "Checking.h"
 
 // Constructor to initialize the Checking Account
 CheckingAccount::CheckingAccount(long card, int secCode, int pinNumber, double initialBalance)
