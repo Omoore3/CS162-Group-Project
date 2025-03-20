@@ -1,6 +1,6 @@
 // CDAccount.h
-#ifndef CDACCOUNT_H
-#define CDACCOUNT_H
+#ifndef CD_H
+#define CD_H
 
 #include <iostream>
 #include <vector>
@@ -56,4 +56,4 @@ public:
     void transferBetweenAccounts(int fromAccountId, int toAccountId, double amount);
 };
 
-#endif // CDACCOUNT_H
+#endif // CD_H
