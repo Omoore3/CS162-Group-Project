@@ -6,8 +6,6 @@
 #include <iostream>
 #include <stdexcept>  // To handle errors
 
-using namespace std;
-
 // Base Account class
 class Account {
 protected:
