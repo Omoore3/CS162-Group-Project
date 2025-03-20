@@ -4,7 +4,7 @@
 #define CHECKING_H
 #include <iostream>
 
-class Checking {
+class Checking: public Account {
 private: 
     long cardNo;      // Card Number
     int securityCode; // Security code for the card
@@ -15,9 +15,9 @@ public:
       Checking(long card, int secCode, int pinNumber, double balance);
 
     // Methods to perform actions on the account
-      void withdraw(double amount); // Withdraw money from the account
-      void deposit(double amount);  // Deposit money from the account
-      void transfer(double amount); // Transfer money from the account
+      void withdraw(double amount) override final; // Withdraw money from the account
+      void deposit(double amount) override final;  // Deposit money from the account
+      void transfer(double amount, Account* recipient) override final // Transfer money from the account
 
     // Way to validate pin
       bool pinError(int enteredPin) const;
