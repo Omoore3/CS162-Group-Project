@@ -3,11 +3,11 @@
 #include "Checking.h"
 
 // Constructor to initialize the Checking Account
-CheckingAccount::CheckingAccount(long card, int secCode, int pinNumber, double initialBalance)
-    : cardNo(card), securityCode(secCode), pin(pinNumber), balance(initialBalance) {}
+Checking::Checking(long account_number, long card, int secCode, int pinNumber, double balance)
+    : Account(account_number, balance), cardNo(card), securityCode(secCode), pin(pinNumber) {}
 
 // Withdraw money from the account
-void CheckingAccount::withdraw(double amount) {
+void Checking::withdraw(double amount) {
     cout << "Enter pin number to proceed with withdrawal: ";
     int enteredPin;
     cin >> enteredPin;
@@ -26,13 +26,13 @@ void CheckingAccount::withdraw(double amount) {
 }
 
 // Deposit money into the account
-void CheckingAccount::deposit(double amount) {
+void Checking::deposit(double amount) {
     balance += amount;
     cout << "Deposit of $" << amount << " successful!" << endl;
 }
 
 // Transfer money to another Checking Account
-void CheckingAccount::transfer(double amount, CheckingAccount& recipient) {
+void Checking::transfer(double amount, Account& recipient) {
     cout << "Enter pin number to proceed with transfer: ";
     int enteredPin;
     cin >> enteredPin;
@@ -52,17 +52,17 @@ void CheckingAccount::transfer(double amount, CheckingAccount& recipient) {
 }
 
 // Check if the entered pin is correct
-bool CheckingAccount::pinError(int enteredPin) const {
+bool Checking::pinError(int enteredPin) const {
     return enteredPin != pin;
 }
 
 // Get the balance of the account
-double CheckingAccount::getBalance() const {
+double Checking::getBalance() const {
     return balance;
 }
 
 // Print the account information
-void CheckingAccount::printAccountInfo() const {
+void Checking::printAccountInfo() const {
     cout << "Card Number: " << cardNo << endl;
     cout << "Balance: $" << balance << endl;
     cout << "Interest Rate: 0.02% APY" << endl;
