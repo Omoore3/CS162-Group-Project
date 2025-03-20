@@ -1,6 +1,8 @@
 // CDAccount.cpp
 #include "CDAccount.h"
 
+using namespace std;
+
 // Account class methods
 Account::Account(int id, double balance) : accountId(id), balance(balance) {}
 
