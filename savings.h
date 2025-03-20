@@ -1,33 +1,22 @@
-// SavingsAccount.h
+#ifndef SAVINGS_H
+#define SAVINGS_H
 
-#ifndef SAVINGSACCOUNT_H
-#define SAVINGSACCOUNT_H
-
+#include <string>
 #include <iostream>
-#include <stdexcept>  // To handle errors
 
-// Base Account class
-class Account {
-protected:
-    int accountId;  // Account ID
-    double balance; // Balance in the account
+using namespace std;
+
+class Savings {
+private:
+    double balance;
+    double interestRate;
 
 public:
-    Account(int id, double balance); // Constructor to set account ID and balance
-    double getBalance() const;       // To get the account balance
-    void deposit(double amount);     // To deposit money into the account
-    void withdraw(double amount);    // To withdraw money from the account
-    void transfer(Account& toAccount, double amount); // To transfer money to another account
-    virtual void printAccount() const; // To print account details
+    Savings(double balance, double interestRate);
+    void deposit(double amount);
+    void withdraw(double amount);
+    void calculateInterest();
+    void displayBalance() const;
 };
 
-// Savings Account class derived from Account class
-class SavingsAccount : public Account {
-public:
-    SavingsAccount(int id, double initialDeposit); // Constructor to create a savings account
-
-    void withdraw(double amount) override; // Override withdraw method
-    void printAccount() const override;   // Override to print savings account details
-};
-
-#endif // SAVINGSACCOUNT_H
+#endif
