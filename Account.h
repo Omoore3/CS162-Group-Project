@@ -8,12 +8,13 @@
 #include <vector>
 #include "Transaction.h"
 
+using namespace std;
 
 class Account {
 private:
 	long account_number; //unique identifier for each account class. Need a method
 	double balance;	     //to verrify that account_number is unique in all classes (Use a map?)
-	std::vector<Transaction> transactions;
+	vector<Transaction> transactions;
 	int numOfTransactions;
 
 	//setters which should be inaccessible to prevent fraud, but are required for the rubric
