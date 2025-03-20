@@ -1,5 +1,5 @@
 // CDAccount.cpp
-#include "CDAccount.h"
+#include "cd.h"
 
 using namespace std;
 
