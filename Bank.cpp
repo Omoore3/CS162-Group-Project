@@ -51,7 +51,7 @@ void Bank::retrieve() {
 void Bank::store() {
 	//pretty similar to ^
 	ofstream outFile("output.bin", ios::binary);
-	outFile.write(reinterpret_cast<char*>(customers.size()), sizeof(customers.size());
+	outFile.write(reinterpret_cast<char*>(customers.size()), sizeof(customers.size()));
 
 	for (int i = 0; i < customers.size(); i++) {
 		outFile.write(customers[i].getName().c_str(), sizeof(customers[i].getName().c_str())); //Saving the 

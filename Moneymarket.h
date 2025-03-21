@@ -19,10 +19,11 @@ private:
 public:
     MoneyMarket(long account_number, double balance);
     void deposit(double amount) override final;
-    void transfer(Account& toAccount, double amount) override final;
+    void transfer(DepositableAccount* recipient, double amount);
     void withdraw(double amount) override final;
     double calculateInterest();
     void printAccount();
+    MoneyMarket();
 };
 
 #endif

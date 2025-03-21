@@ -40,7 +40,22 @@ Account* Person::getAccount(int index) {
 	return *(accPtr + index); //Returns the account at the given index
 }
 void Person::removeAccount(int index) {
-	~Account accounts[index]; //Calls the deconstructor for the account linked to that index
+	if (index == 1) {//Calls the default constructor for the account linked to that index
+		CD defCD();
+		accPtr[0] = &defCD;
+	}
+	else if (index == 2) {
+		MM defMM();
+		accPtr[1] = &defMM;
+	}
+	else if (index == 3) {
+		Savings defSav();
+		accPtr[2] = &defSav;
+	}
+	else if (index == 4) {
+		Checking defCheck();
+		accPtr[3] = &defCheck;
+	}
 }
 Person::Person() { //Default constructor that sets all customer identifiers to null, as a way to erase customers.
 	name = '\0';

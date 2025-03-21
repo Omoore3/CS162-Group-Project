@@ -6,7 +6,7 @@ using namespace std;
 #define DEPOSITABLEACCOUNT_H
 class DepositableAccount : public Account {
 public:
-	void deposit(double amount);
+	virtual void deposit(double amount) = 0;
 };
 
 #endif

@@ -5,15 +5,14 @@
 
 #include "Account.h"
 #include <stdexcept>
-#include <ctime>
 
 using namespace std;
 
 //Account class' methods, getters, setters and constructors
 //*********************************************************
 
-// default constructor
-Account::Account() : account_number(0), balance(0) {}
+
+Account::Account() : account_number(0), balance(0) {} // default constructor
 
 //constructor for account_number and balance
 Account::Account(long account_number, double balance) {

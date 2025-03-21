@@ -5,18 +5,22 @@
 using namespace std;
 
 // MoneyMarketAccount Class methods
-MoneyMarket::MoneyMarket(long account_number, double balance): Account(account_number, balance) {  // 1.25% APY
+MoneyMarket::MoneyMarket(long account_number, double balance): DepositableAccount(account_number, balance) {  // 1.25% APY
     if (balance < feeThreshold) {
         cout << "Warning: Initial deposit is less than $10,000. This may incur fees for certain operations." << endl;
     }
 }
 
-void MoneyMarket::transfer(double amount, Account* recipient) {
+void MoneyMarket::deposit(double amount) {
+    setBalance(getBalance() + amount);
+}
+
+void MoneyMarket::transfer(DepositableAccount* recipient, double amount) {
     if (this->getBalance() < amount) {
         throw runtime_error("Insufficient funds for transfer.");
     }
     this->setBalance(this->getBalance() - amount); // this statement replaces balance -= amount
-    toAccount().deposit(amount);
+    recipient->deposit(amount);
 
     // If balance goes below $10,000 after transfer, incur a fee
     if (getBalance() < feeThreshold) {
