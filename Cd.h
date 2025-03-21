@@ -13,7 +13,6 @@ using namespace std;
 class CD : public Account {
 private:
     time_t time_agreement;  // Maturity date of the CD
-    double interestRate;    // Interest rate based on the term
     int termMonths;         // The term length of the CD in months
 
     double calculateInterestRate() const;
