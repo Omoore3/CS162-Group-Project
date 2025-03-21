@@ -3,6 +3,8 @@
 #indef CHECKING_H
 #define CHECKING_H
 
+#include "DepositableAccount.h"
+
 using namespace std;
 
 class Checking: public DepositableAccount {
