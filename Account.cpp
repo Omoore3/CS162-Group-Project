@@ -6,7 +6,7 @@
 #include "Account.h"
 #include <stdexcept>
 
-using namespace std
+using namespace std;
 
 //Account class' methods, getters, setters and constructors
 //*********************************************************
