@@ -5,11 +5,10 @@
 #include "Account.h"
 
 #include <iostream>
-#include <vector>
-#include <stdexcept>
 #include <ctime>
-#include <iomanip>  // For setprecision
 #include <cmath>    // For pow function
+
+using namespace std;
 
 
 // CDAccount Class (derived from Account)
