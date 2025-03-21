@@ -3,10 +3,10 @@
 #ifndef SAVINGS_H
 #define SAVINGS_H
 
-#include "Account.h"  //base class
+#include "DepositableAccount.h"  //base class
 
 // Savings Account class derived from Account class
-class Savings : public Account {
+class Savings : public DepositableAccount {
 public:
     Savings(int account_number, double balance); // Constructor to create a savings account
 
