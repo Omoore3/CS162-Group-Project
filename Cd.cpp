@@ -64,23 +64,3 @@ void Cd::printAccount() const {
          << interestRate * 100 << "% | Maturity Date: "
          << put_time(localtime(&time_agreement), "%c") << endl;
 }
-
-void Cd::transferBetweenAccounts(int fromAccountId, int toAccountId, double amount) {
-    Cd* fromAccount = nullptr;
-    Cd* toAccount = nullptr;
-
-    for (auto& account : cdAccounts) {
-        if (account.getAccountId() == fromAccountId) {
-            fromAccount = &account;
-        } else if (account.getAccountId() == toAccountId) {
-            toAccount = &account;
-        }
-    }
-
-    if (fromAccount && toAccount) {
-        fromAccount->transfer(*toAccount, amount);
-        cout << "Transfer successful!" << endl;
-    } else {
-        cout << "Error: One or both account IDs not found." << endl;
-    }
-}
