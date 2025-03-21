@@ -7,9 +7,6 @@ class Bank {
 private:
 	vector<Person> customers;
 protected:
-	double const CD_3_MON = 0.025;
-	double const CD_6_MON = 0.03;
-	double const CD_12_MON = 0.05;
 	double const MM_INTEREST = 0.0125;
 	double const CHECK_INTEREST = 0.0002;
 public:
