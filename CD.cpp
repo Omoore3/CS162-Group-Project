@@ -1,11 +1,11 @@
 // CDAccount.cpp
-#include "Cd.h"
+#include "CD.h"
 #include <stdexcept>
 #include <iostream>
 #include <cmath>    // For pow function
 
 // CDAccount class methods
-Cd::Cd(int account_number, double balance, int termMonths)
+CD::CD(int account_number, double balance, int termMonths)
     : Account(account_number, balance), termMonths(termMonths) {
     interestRate = calculateInterestRate();
     maturityReached = false;
@@ -17,14 +17,14 @@ Cd::Cd(int account_number, double balance, int termMonths)
     time_agreement = mktime(timeStruct);
 }
 
-double Cd::calculateInterestRate() const {
+double CD::calculateInterestRate() const {
     if (termMonths == 3) return 0.025;  // 2.5% for 3 months
     else if (termMonths == 6) return 0.03;  // 3% for 6 months
     else if (termMonths == 12) return 0.05;  // 5% for 12 months
     return 0.0;
 }
 
-bool Cd::isMaturityDatePassed() const {
+bool CD::isMaturityDatePassed() const {
     if(difftime(time(0), time_agreement) > 0 && !maturityReached) {
         balance += calculateInterest();
         maturityReached = true;
@@ -38,7 +38,7 @@ double Cd::calculateInterest() {
     return interest;
 }
 
-void Cd::withdraw(double amount) {
+void CD::withdraw(double amount) {
     if (!isMaturityDatePassed()) {
         throw runtime_error("Cannot withdraw: Maturity date has not passed yet.");
     }
@@ -48,7 +48,7 @@ void Cd::withdraw(double amount) {
     balance -= amount;
 }
 
-void Cd::transfer(double amount, Account* recipient) {
+void CD::transfer(double amount, Account* recipient) {
     if (!isMaturityDatePassed()) {
         throw runtime_error("Cannot transfer: Maturity date has not passed yet.");
     }
@@ -59,7 +59,7 @@ void Cd::transfer(double amount, Account* recipient) {
     toAccount.balance += amount;
 }
 
-void Cd::printAccount() const {
+void CD::printAccount() const {
     cout << "Term: " << termMonths << " months | Interest Rate: "
          << interestRate * 100 << "% | Maturity Date: "
          << put_time(localtime(&time_agreement), "%c") << endl;
