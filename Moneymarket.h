@@ -2,6 +2,8 @@
 #ifndef MONEYMARKET_H
 #define MONEYMARKET_H
 
+#include "DepositableAccount.h"
+
 #include <iostream>
 #include <stdexcept>
 #include <iomanip>
@@ -11,7 +13,7 @@
 using namespace std;
 
 // MoneyMarketAccount Class (derived from Account)
-class MoneyMarket : public Account {
+class MoneyMarket : public DepositableAccount {
 private:
     static constexpr double feeThreshold = 10000.00;  // Balance threshold to avoid fees
 public:
