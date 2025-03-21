@@ -1,9 +1,11 @@
 // MoneyMarketAccount.cpp
 #include "MoneyMarket.h"
 
+using namespace std;
+
 // MoneyMarketAccount Class methods
 MoneyMarket::MoneyMarket(long account_number, double balance): Account(account_number, balance) {  // 1.25% APY
-    if (initialDeposit < feeThreshold) {
+    if (balance < feeThreshold) {
         cout << "Warning: Initial deposit is less than $10,000. This may incur fees for certain operations." << endl;
     }
 }
@@ -12,7 +14,7 @@ void MoneyMarket::deposit(double amount) {
     Account::deposit(amount);
 }
 
-void MoneyMarket::transfer(Account& toAccount, double amount) {
+void MoneyMarket::transfer(double amount, Account* recipient) {
     if (balance < amount) {
         throw runtime_error("Insufficient funds for transfer.");
     }
@@ -40,8 +42,8 @@ void MoneyMarket::withdraw(double amount) {
 }
 
 double MoneyMarket::calculateInterest() const {
-    // Interest calculation for 1.25% APY
-    double years = 1.0;  // Since interest is APY, we assume 1 year for simplicity
+    
+    double years = 1.0;
     return balance * pow(1 + interestRate, years) - balance;
 }
 
