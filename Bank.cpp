@@ -45,7 +45,7 @@ void Bank::retrieve() {
 
 
 	for (int i = 0; i < readsize; i++) {
-
+		inFile.read(reinterpret_cast<char*>(&customers[i]), sizeof(customers[i]));
 	}
 }
 void Bank::store() {
