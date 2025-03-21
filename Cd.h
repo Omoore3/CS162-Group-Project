@@ -24,6 +24,7 @@ public:
     void deposit(double amount) override final;  // Disable deposit function for this class
     void withdraw(double amount) override final;
     void transfer(CDAccount& toAccount, double amount) override final;
+    void printAccount() const;
 };
 
 #endif
