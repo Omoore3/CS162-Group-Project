@@ -12,13 +12,12 @@ using namespace std;
 //*********************************************************
 
 
-Account::Account(): account_number(0), balance(0), numOfTransactions(0) {} // default constructor
+Account::Account() : account_number(0), balance(0) {} // default constructor
 
 //constructor for account_number and balance
 Account::Account(long account_number, double balance) {
 	this->account_number = account_number;
 	this->balance = balance;
-	this->numOfTransactions = 0;
 }
 
 //getters for Account class (not virtual functions, those are defined in subclasses)
@@ -33,10 +32,10 @@ long Account::getAccountNumber() const {
 
 //setters for Account class
 
-void Account::setBalance(double balance) const {
+void Account::setBalance(double balance) {
 	this->balance = balance;
 }
 
-void Account::setAccountNumber(long account_number) const {
+void Account::setAccountNumber(long account_number) {
 	this->account_number = account_number;
 }
