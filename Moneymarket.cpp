@@ -1,5 +1,6 @@
 // MoneyMarketAccount.cpp
 #include "MoneyMarket.h"
+#include "Account.h"
 
 using namespace std;
 
@@ -15,36 +16,36 @@ void MoneyMarket::deposit(double amount) {
 }
 
 void MoneyMarket::transfer(double amount, Account* recipient) {
-    if (balance < amount) {
+    if (this->getBalance() < amount) {
         throw runtime_error("Insufficient funds for transfer.");
     }
-    balance -= amount;
-    toAccount.deposit(amount);
+    this->setBalance(this->getBalance() - amount); // this statement replaces balance -= amount
+    toAccount().deposit(amount);
 
     // If balance goes below $10,000 after transfer, incur a fee
-    if (balance < feeThreshold) {
-        balance -= 200;  // $200 fee
-        cout << "Transfer fee of $200 applied. New balance: $" << fixed << setprecision(2) << balance << endl;
+    if (getBalance() < feeThreshold) {
+        setBalance(this->getBalance() - 200);  // $200 fee
+        cout << "Transfer fee of $200 applied. New balance: $" << fixed << setprecision(2) << getBalance() << endl;
     }
 }
 
 void MoneyMarket::withdraw(double amount) {
-    if (balance < amount) {
+    if (getBalance() < amount) {
         throw runtime_error("Insufficient funds for withdrawal.");
     }
-    balance -= amount;
+    this->setBalance(this->getBalance() - amount);
 
     // If balance goes below $10,000 after withdrawal, incur a fee
-    if (balance < feeThreshold) {
-        balance -= 200;  // $200 fee
-        cout << "Withdrawal fee of $200 applied. New balance: $" << fixed << setprecision(2) << balance << endl;
+    if (getBalance() < feeThreshold) {
+        setBalance(this->getBalance() - 200);  // $200 fee
+        cout << "Withdrawal fee of $200 applied. New balance: $" << fixed << setprecision(2) << getBalance() << endl;
     }
 }
 
 double MoneyMarket::calculateInterest() const {
     
     double years = 1.0;
-    return balance * pow(1 + interestRate, years) - balance;
+    return getBalance() * pow(1 + interestRate, years) - getBalance();
 }
 
 void MoneyMarket::printAccount() const {
