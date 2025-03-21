@@ -4,9 +4,7 @@
 
 #include "Account.h"
 
-#include <iostream>
 #include <ctime>
-#include <cmath>    // For pow function
 
 using namespace std;
 
