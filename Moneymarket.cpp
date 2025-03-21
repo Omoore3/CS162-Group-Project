@@ -11,10 +11,6 @@ MoneyMarket::MoneyMarket(long account_number, double balance): Account(account_n
     }
 }
 
-void MoneyMarket::deposit(double amount) {
-    Account::deposit(amount);
-}
-
 void MoneyMarket::transfer(double amount, Account* recipient) {
     if (this->getBalance() < amount) {
         throw runtime_error("Insufficient funds for transfer.");
