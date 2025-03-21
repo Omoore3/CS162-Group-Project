@@ -16,7 +16,6 @@ Person::Person(string name, int dob, int phone, string email, string pass) { //C
 	this->email = email;
 	password = pass;
 }
-
 void Person::createAccount(long num, double balance, int type) {
 	//Call account constructor, based on the number given
 	if (type == 1) {//Calls CD constructor
@@ -36,9 +35,9 @@ void Person::createAccount(long num, double balance, int type) {
 
 	}
 }
-template <class T>
-T Person::getAccount<T>(int index) {
-	return *accPtr[0]; //Returns the account at the given index
+
+Account* Person::getAccount(int index) {
+	return *(accPtr + index); //Returns the account at the given index
 }
 void Person::removeAccount(int index) {
 	~Account accounts[index]; //Calls the deconstructor for the account linked to that index
