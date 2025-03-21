@@ -18,7 +18,7 @@ private:
 
     double calculateInterestRate() const;
 public:
-    Cd(long account_number, double balance, int termMonths);
+    CD(long account_number, double balance, int termMonths);
     bool isMaturityDatePassed() const;
     double calculateInterest();
     void deposit(double amount) override final;  // Disable deposit function for this class
