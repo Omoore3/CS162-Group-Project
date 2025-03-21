@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 
-#include "Bank.h"
+#include "bank.h"
 #include "person.h"
 
 #include "Account.h"
