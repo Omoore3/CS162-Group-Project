@@ -5,7 +5,7 @@
 
 using namespace std;
 
-class Checking: public Account {
+class Checking: public DepositableAccount {
 private: 
     long cardNo;      // Card Number
     int securityCode; // Security code for the card
