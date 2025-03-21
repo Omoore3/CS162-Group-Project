@@ -31,11 +31,6 @@ protected:
 	//Constructors
 	Account();
 	Account(long account_number, double balance);
-	//virtual destructor in case we use pointers. I'm not sure if this
-	//is necessary or not but I'm including it as a reminder to check back
-	//on it.
-	virtual ~Account();
-
 };
 
 #endif
