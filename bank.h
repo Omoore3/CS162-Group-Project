@@ -1,3 +1,6 @@
+#ifndef BANK_H
+#define BANK_H
+
 #include <vector>
 #include "person.h"
 using namespace std;
@@ -13,3 +16,4 @@ public:
 	void store();
 	void retrieve();
 };
+#endif

@@ -1,3 +1,6 @@
+#ifndef PERSON_H
+#define PERSON_H
+
 #include <iostream>
 using namespace std;
 class Person {
@@ -30,3 +33,4 @@ public:
 	void setPhone(int phone) { phoneNo = phone; }
 	void setEmail(string mail) { email = mail; }
 };
+#endif
