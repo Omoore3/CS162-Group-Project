@@ -14,6 +14,7 @@ class CD : public Account {
 private:
     time_t time_agreement;  // Maturity date of the CD
     int termMonths;         // The term length of the CD in months
+    bool maturityReached;
 
     double calculateInterestRate() const;
 
