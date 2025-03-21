@@ -16,6 +16,10 @@ private:
     int termMonths;         // The term length of the CD in months
     bool maturityReached;
 
+    static const double CD_3_MON = 0.025;
+	static const double CD_6_MON = 0.03;
+	static const double CD_12_MON = 0.05;
+
     double calculateInterestRate() const;
 public:
     CD(long account_number, double balance, int termMonths);
