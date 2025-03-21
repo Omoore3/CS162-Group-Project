@@ -2,7 +2,8 @@
 
 #indef CHECKING_H
 #define CHECKING_H
-#include <iostream>
+
+using namespace std;
 
 class Checking: public Account {
 private: 
@@ -21,7 +22,7 @@ public:
 
     // Way to validate pin
       bool pinError(int enteredPin) const;
-      void printAccountInfo() const;
+      void printAccount() const;
 };
 
  #endif // CHECKING_H
