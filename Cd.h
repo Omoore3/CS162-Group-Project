@@ -23,7 +23,7 @@ public:
     double calculateInterest();
     void deposit(double amount) override final;  // Disable deposit function for this class
     void withdraw(double amount) override final;
-    void transfer(CDAccount& toAccount, double amount) override final;
+    void transfer(double amount, Account* recipient) override final;
     void printAccount() const;
 };
 
