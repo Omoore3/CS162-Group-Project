@@ -23,24 +23,12 @@ Account::Account(long account_number, double balance) {
 
 //getters for Account class (not virtual functions, those are defined in subclasses)
 
-//Possible boounds exception. Function must be passed from inside a
-//try block with the appropriate catch block
-Transaction Account::getTransaction(int i) const {
-	if(i >= transactions.size() || i < 0) 
-		throw runtime_error("Out of bounds error. Aborting process...");
-	return transactions[i];
-}
-
 double Account::getBalance() const {
 	return this->balance;
 }
 
 long Account::getAccountNumber() const {
 	return this->account_number;
-}
-
-int Account::getNumOfTransactions() const {
-	return this->numOfTransactions;
 }
 
 //setters for Account class
@@ -51,14 +39,4 @@ void Account::setBalance(double balance) const {
 
 void Account::setAccountNumber(long account_number) const {
 	this->account_number = account_number;
-}
-
-void Account::getNumOfTransactions() const {
-	this->numOfTransactions = this->transactions.size();
-}
-
-void Account::setTransaction(int i, Transaction T) {
-	if(i >= transactions.size() || i < 0) 
-		throw runtime_error("Out of bounds error. Aborting process...");
-	transactions[i] = T;
 }
