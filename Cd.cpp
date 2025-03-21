@@ -1,10 +1,14 @@
 // CDAccount.cpp
 #include "Cd.h"
+#include <stdexcept>
+#include <iostream>
+#include <cmath>    // For pow function
 
 // CDAccount class methods
 Cd::Cd(int account_number, double balance, int termMonths)
     : Account(account_number, balance), termMonths(termMonths) {
     interestRate = calculateInterestRate();
+    maturityReached = false;
     
     time_t currentTime = time(0);
     tm* timeStruct = localtime(&currentTime);
@@ -21,14 +25,14 @@ double Cd::calculateInterestRate() const {
 }
 
 bool Cd::isMaturityDatePassed() const {
+    if(difftime(time(0), time_agreement) > 0 && !maturityReached) {
+        balance += calculateInterest();
+        maturityReached = true;
+    }
     return difftime(time(0), time_agreement) > 0;
 }
 
 double Cd::calculateInterest() {
-    if (!isMaturityDatePassed()) {
-        throw runtime_error("Cannot calculate interest: Maturity date has not passed yet.");
-    }
-
     double years = static_cast<double>(termMonths) / 12.0;
     double interest = balance * pow(1 + interestRate, years) - balance;
     return interest;
@@ -44,7 +48,7 @@ void Cd::withdraw(double amount) {
     balance -= amount;
 }
 
-void Cd::transfer(CDAccount& toAccount, double amount) {
+void Cd::transfer(CDAccount* recipient, double amount) {
     if (!isMaturityDatePassed()) {
         throw runtime_error("Cannot transfer: Maturity date has not passed yet.");
     }
@@ -56,17 +60,9 @@ void Cd::transfer(CDAccount& toAccount, double amount) {
 }
 
 void Cd::printAccount() const {
-    Account::printAccount();
     cout << "Term: " << termMonths << " months | Interest Rate: "
          << interestRate * 100 << "% | Maturity Date: "
          << put_time(localtime(&time_agreement), "%c") << endl;
-}
-
-void Cd::printCDAccounts() const {
-    cout << "\n--- List of CD Accounts ---" << endl;
-    for (const auto& account : cdAccounts) {
-        account.printAccount();
-    }
 }
 
 void Cd::transferBetweenAccounts(int fromAccountId, int toAccountId, double amount) {
