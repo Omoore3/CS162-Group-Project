@@ -60,17 +60,17 @@ void Bank::store() {
 		outFile.write(customers[i].getEmail().c_str(), sizeof(customers[i].getEmail().c_str()));
 		outFile.write(customers[i].getPass().c_str(), sizeof(customers[i].getPass().c_str()));
 
-		if (customers[i].getAccount<CD>(0).getNumber() != 0) {//DEFINE getNumber OR SOMETHING OF SIMILAR FUNCTION THAT GETS THE ACCOUNT NUMBER
-			outFile.write(reinterpret_cast<char*>(customers[i].getAccount<CD>(0)), sizeof(customers[i].getAccount<CD>(0)));
+		if (customers[i].getAccount(0).getNumber() != 0) {//DEFINE getNumber OR SOMETHING OF SIMILAR FUNCTION THAT GETS THE ACCOUNT NUMBER
+			outFile.write(reinterpret_cast<char*>(customers[i].getAccount(0)), sizeof(customers[i].getAccount(0)));
 		}
-		if (customers[i].getAccount<MM>(1).getNumber() != 0) {
-			outFile.write(reinterpret_cast<char*>(customers[i].getAccount<MM>(1)), sizeof(customers[i].getAccount<MM>(1)));
+		if (customers[i].getAccount(1).getNumber() != 0) {
+			outFile.write(reinterpret_cast<char*>(customers[i].getAccount(1)), sizeof(customers[i].getAccount(1)));
 		}
-		if (customers[i].getAccount<Savings>(2).getNumber() != 0) {
-			outFile.write(reinterpret_cast<char*>(customers[i].getAccount<Savings>(2)), sizeof(customers[i].getAccount < Savings(2)));
+		if (customers[i].getAccount(2).getNumber() != 0) {
+			outFile.write(reinterpret_cast<char*>(customers[i].getAccount(2)), sizeof(customers[i].getAccount(2)));
 		}
-		if (customers[i].getAccount<Checking>(3).getNumber() != 0) {
-			outFile.write(reinterpret_cast<char*>(customers[i].getAccount<Checking>(3)), sizeof(customers[i].getAccount<Checking>(3)));
+		if (customers[i].getAccount(3).getNumber() != 0) {
+			outFile.write(reinterpret_cast<char*>(customers[i].getAccount(3)), sizeof(customers[i].getAccount(3)));
 		}
 	}
 	outFile.close();
