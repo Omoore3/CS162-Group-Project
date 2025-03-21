@@ -17,10 +17,10 @@ CD::CD(int account_number, double balance, int termMonths)
     time_agreement = mktime(timeStruct);
 }
 
-double CD::calculateInterestRate() const {
-    if (termMonths == 3) return 0.025;  // 2.5% for 3 months
-    else if (termMonths == 6) return 0.03;  // 3% for 6 months
-    else if (termMonths == 12) return 0.05;  // 5% for 12 months
+static const double CD::calculateInterestRate() const {
+    if (termMonths == 3) return CD_3_MON;  // 2.5% for 3 months
+    else if (termMonths == 6) return CD_6_MON;  // 3% for 6 months
+    else if (termMonths == 12) return CD_12_MON;  // 5% for 12 months
     return 0.0;
 }
 
