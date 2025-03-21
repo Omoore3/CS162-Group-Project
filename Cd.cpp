@@ -48,7 +48,7 @@ void Cd::withdraw(double amount) {
     balance -= amount;
 }
 
-void Cd::transfer(CDAccount* recipient, double amount) {
+void Cd::transfer(double amount, Account* recipient) {
     if (!isMaturityDatePassed()) {
         throw runtime_error("Cannot transfer: Maturity date has not passed yet.");
     }
